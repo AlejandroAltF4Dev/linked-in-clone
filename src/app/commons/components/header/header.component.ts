@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ProfileQuery} from "../../state/profile.query";
+import {ProfileQuery} from "../../state/profile/profile.query";
 
 @Component({
   selector: 'app-header',

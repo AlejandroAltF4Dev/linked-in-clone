@@ -1,0 +1,37 @@
+<ng-container *ngIf="profile; else loading">
+  <div class="bg-white w-full rounded-md shadow overflow-hidden">
+    <div class="flex flex-col divide-y">
+      <img [src]="profile.banner" alt="" class="h-[54px] object-cover">
+      <div class="flex flex-col relative items-center text-center">
+        <div class="w-[68px] h-[68px] rounded-full -mt-10 overflow-hidden bg-white">
+          <img [src]="profile.avatar" alt="">
+        </div>
+
+        <span class="text-lg font-bold mt-3">{{profile.first_name + ' ' + profile.last_name}}</span>
+        <span class=" text-slate-500 text-sm p-2">{{profile.role}} at {{profile.company}}</span>
+      </div>
+      <div class="flex flex-col text-sm font-bold px-4">
+        <div class="flex justify-between w-full py-2">
+          <span class="text-slate-600">Who's viewed your profile</span>
+          <span class="text-blue-600">21</span>
+        </div>
+        <div class="flex justify-between w-full pt-2">
+          <span class="text-slate-600 ">Connections</span>
+          <span class="text-blue-600">100</span>
+        </div>
+        <a class="text-slate-900 mb-4">Grow your network</a>
+      </div>
+      <div class="flex flex-col text-sm px-4">
+        <span class="text-slate-600 mt-4">Access exclusive tools & insights</span>
+        <a class="text-slate-900 mb-4 font-bold">Try premium for free</a>
+      </div>
+      <div class="flex flex-col text-sm px-4">
+        <a class="text-slate-900 my-4 font-bold">My items</a>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+<ng-template #loading>
+  <h1>Loading...</h1>
+</ng-template>

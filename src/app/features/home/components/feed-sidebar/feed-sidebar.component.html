@@ -1,0 +1,26 @@
+<ng-container *ngIf="feed; else loading">
+  <div class="bg-white w-full rounded-md shadow overflow-hidden py-4">
+    <div class="flex flex-col">
+      <div class="px-4 flex justify-between items-center">
+        <span class="font-bold">Add to your feed</span>
+        <ng-icon name="bootstrap-info-square-fill" class="text-slate-500"></ng-icon>
+      </div>
+      <ng-container *ngFor="let person of feed">
+        <div class="flex px-4 py-2 items-center gap-2">
+          <img [src]="person.avatar" alt="">
+          <div class="flex flex-col text-sm gap-1">
+            <span class="font-bold">{{person.name}}</span>
+            <span class="text-xs text-slate-500">{{person.role}} at {{person.work_place}}</span>
+            <button class="rounded-2xl border text-slate-500 self-start px-4 py-2 font-bold">
+              + Follow
+            </button>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <h1>Loading...</h1>
+</ng-template>

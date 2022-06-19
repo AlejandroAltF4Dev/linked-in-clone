@@ -1,0 +1,16 @@
+<div class="flex gap-4">
+  <div class="w-60 hidden lg:block">
+    <ng-container *ngIf="{profile: profile$ | async} as vm">
+      <app-profile-sidebar [profile]="vm?.profile"></app-profile-sidebar>
+    </ng-container>
+
+  </div>
+  <div class="flex-grow bg-gray-600 h-40">
+
+  </div>
+  <div class="w-72 hidden lg:block">
+    <ng-container *ngIf="{feed: feed$ | async} as vm">
+      <app-feed-sidebar [feed]="vm?.feed"></app-feed-sidebar>
+    </ng-container>
+  </div>
+</div>

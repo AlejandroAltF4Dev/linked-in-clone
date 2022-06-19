@@ -1,5 +1,7 @@
 <ng-container *ngIf="profile$ | async"></ng-container>
+<ng-container *ngIf="feed$ | async"></ng-container>
+<ng-container *ngIf="posts$ | async"></ng-container>
 <app-header></app-header>
-<main>
-
+<main class="mt-20 max-w-7xl mx-auto">
+  <router-outlet></router-outlet>
 </main>
