@@ -1,0 +1,32 @@
+<header class="bg-white shadow">
+  <div class="h-[53px] flex items-center justify-between max-w-6xl mx-auto ">
+    <div class="flex gap-2">
+      <ng-icon name="bootstrap-linkedin" class="text-blue-700 text-[34px]"></ng-icon>
+      <div class="flex relative">
+        <input type="text" class="bg-[#EEF3F8] rounded pl-8 placeholder:text-slate-500 placeholder:text-sm"
+               placeholder="Search">
+        <div class="absolute top-2 left-2">
+          <ng-icon name="bootstrap-search" class="text-slate-500"></ng-icon>
+        </div>
+      </div>
+    </div>
+    <div class="flex text-[24px] gap-8 text-slate-500">
+      <div (click)="select(navItem.id)"
+           class="flex flex-col items-center cursor-pointer hover:text-slate-900 transition"
+           *ngFor="let navItem of navItems"
+           [ngClass]="{'text-slate-900':selected === navItem.id}"
+      >
+        <ng-icon [name]="navItem.icon"></ng-icon>
+        <span class="text-xs">{{navItem.text}}</span>
+      </div>
+      <div
+        class="flex flex-col items-center cursor-pointer hover:text-slate-900 bg-slate-300 rounded-full overflow-hidden ring-1"
+        *ngIf="profile$ | async as profile"
+      >
+        <img [src]="profile.avatar" alt="avatar" class=" h-[38px] object-cover">
+      </div>
+    </div>
+  </div>
+
+
+</header>

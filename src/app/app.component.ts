@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Profile} from "./commons/state/profile.model";
+import {ProfileService} from "./commons/state/profile.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'linked-in-clone';
+  title = 'LinkedIn';
+  profile$: Observable<Profile> = this.profileService.get();
+
+  constructor(
+    private profileService: ProfileService
+  ) {
+  }
+
 }
