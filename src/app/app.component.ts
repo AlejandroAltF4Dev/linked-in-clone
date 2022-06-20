@@ -6,6 +6,7 @@ import {FeedService} from "./commons/state/feed/feed.service";
 import {PostService} from "./commons/state/post/post.service";
 import {Feed} from "./commons/state/feed/feed.model";
 import {Post} from "./commons/state/post/post.model";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -13,16 +14,18 @@ import {Post} from "./commons/state/post/post.model";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'LinkedIn';
+  title = '(19) Feed | LinkedIn';
   profile$: Observable<Profile> = this.profileService.get();
   feed$: Observable<Feed[]> = this.feedService.get();
   posts$: Observable<Post[]> = this.postService.get();
 
   constructor(
+    private titleService: Title,
     private profileService: ProfileService,
     private feedService: FeedService,
     private postService: PostService,
   ) {
+    titleService.setTitle(this.title)
   }
 
 }

@@ -9,6 +9,13 @@ import {PostListComponent} from './components/post-list/post-list.component';
 import {NgIconsModule} from "@ng-icons/core";
 import {
   BootstrapInfoSquareFill,
+  BootstrapBookmarkFill,
+  BootstrapCurrencyDollar,
+  BootstrapImageFill,
+  BootstrapPlayBtnFill,
+  BootstrapCalendarDateFill,
+  BootstrapBlockquoteLeft,
+  BootstrapThreeDots
 } from '@ng-icons/bootstrap-icons';
 
 @NgModule({
@@ -21,7 +28,16 @@ import {
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgIconsModule.withIcons({BootstrapInfoSquareFill})
+    NgIconsModule.withIcons({
+      BootstrapInfoSquareFill,
+      BootstrapBookmarkFill,
+      BootstrapCurrencyDollar,
+      BootstrapImageFill,
+      BootstrapPlayBtnFill,
+      BootstrapCalendarDateFill,
+      BootstrapBlockquoteLeft,
+      BootstrapThreeDots
+    })
   ]
 })
 export class HomeModule {

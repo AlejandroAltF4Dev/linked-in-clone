@@ -1,1 +1,49 @@
-<p>post-list works!</p>
+<div class="flex flex-col w-full gap-4">
+  <div class="flex flex-col bg-white rounded border " *ngIf="profile">
+    <div class="flex gap-2 p-4">
+      <img [src]="profile.avatar" alt="" class="w-12 h-12 rounded-full">
+      <input type="text" class="flex-grow rounded-3xl border placeholder:text-slate-500 placeholder:font-bold p-4"
+             placeholder="Start a post">
+    </div>
+    <div class="flex font-bold text-slate-500 py-2">
+      <button class="flex-1 flex gap-2 items-center justify-center">
+        <ng-icon name="bootstrap-image-fill" class="text-blue-500"></ng-icon>
+        Photo
+      </button>
+      <button class="flex-1 flex gap-2 items-center justify-center">
+        <ng-icon name="bootstrap-play-btn-fill" class="text-green-500"></ng-icon>
+
+        Video
+      </button>
+      <button class="flex-1 flex gap-2 items-center justify-center">
+        <ng-icon name="bootstrap-calendar-date-fill" class="text-orange-500"></ng-icon>
+
+        Event
+      </button>
+      <button class="flex-1 flex gap-2 items-center justify-center">
+        <ng-icon name="bootstrap-blockquote-left" class="text-red-500"></ng-icon>
+        Write article
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-white rounded border flex flex-col max-w-[570px]" *ngFor="let post of posts; let i = index">
+    <div class="flex gap-2 p-4">
+      <img [src]="post.avatar" alt="" class="w-12 h-12 rounded-full">
+      <div class="flex flex-col">
+        <span class="font-bold">{{post.first_name + ' ' + post.last_name}}</span>
+        <span class="text-slate-500 text-xs text-ellipsis overflow-hidden">{{post.roles.join(' | ')}}
+          at {{post.work_place}}</span>
+        <span class="text-slate-500 text-xs">{{post.publish_date | date: 'dd/MM/yyyy'}}</span>
+      </div>
+      <button class="font-bold text-lg ml-auto text-blue-600" *ngIf="!post.following">+ Follow</button>
+      <button class="ml-auto text-slate-600" *ngIf="post.following">
+        <ng-icon name="bootstrap-three-dots"></ng-icon>
+      </button>
+    </div>
+    <div class="p-4">
+      <p>{{post.body}}</p>
+    </div>
+    <img [src]="post.image+i" alt="" class="object-cover h-[300px]">
+  </div>
+</div>

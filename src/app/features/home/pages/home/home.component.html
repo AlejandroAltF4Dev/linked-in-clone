@@ -5,7 +5,10 @@
     </ng-container>
 
   </div>
-  <div class="flex-grow bg-gray-600 h-40">
+  <div class="flex-grow">
+    <ng-container *ngIf="{posts: posts$ | async, profile: profile$ | async} as vm">
+      <app-post-list [posts]="vm?.posts" [profile]="vm.profile"></app-post-list>
+    </ng-container>
 
   </div>
   <div class="w-72 hidden lg:block">

@@ -1,4 +1,6 @@
 export interface Post {
+  following: boolean;
+  avatar: string;
   id: number;
   first_name: string;
   last_name: string;

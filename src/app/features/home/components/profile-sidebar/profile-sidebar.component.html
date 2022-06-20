@@ -1,5 +1,5 @@
 <ng-container *ngIf="profile; else loading">
-  <div class="bg-white w-full rounded-md shadow overflow-hidden">
+  <div class="bg-white w-full rounded-md border overflow-hidden sticky top-[60px]">
     <div class="flex flex-col divide-y">
       <img [src]="profile.banner" alt="" class="h-[54px] object-cover">
       <div class="flex flex-col relative items-center text-center">
@@ -21,12 +21,16 @@
         </div>
         <a class="text-slate-900 mb-4">Grow your network</a>
       </div>
-      <div class="flex flex-col text-sm px-4">
-        <span class="text-slate-600 mt-4">Access exclusive tools & insights</span>
-        <a class="text-slate-900 mb-4 font-bold">Try premium for free</a>
+      <div class="flex flex-col text-sm p-4">
+        <span class="text-slate-600">Access exclusive tools & insights</span>
+        <div class="flex gap-2 text-sm items-center">
+          <ng-icon name="bootstrap-currency-dollar"></ng-icon>
+          <a class="text-slate-900  font-bold">Try premium for free</a>
+        </div>
       </div>
-      <div class="flex flex-col text-sm px-4">
-        <a class="text-slate-900 my-4 font-bold">My items</a>
+      <div class="flex gap-2 text-sm p-4 items-center">
+        <ng-icon name="bootstrap-bookmark-fill"></ng-icon>
+        <a class="text-slate-900  font-bold">My items</a>
       </div>
     </div>
 
